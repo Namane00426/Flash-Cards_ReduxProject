@@ -1,4 +1,7 @@
-<<<<<<< HEAD
+# Frash-Cards_ReduxProject
+
+An application that can play with frash cards and also make new one by using Redux.
+
 # To Run
 
 Run `npm start` in the project root and the app will be available on port 3000.
@@ -23,9 +26,3 @@ The app's state is totally normalized, with slices for topics, quizzes, and card
 3. Visit the page for an individual quiz and flip the cards over
 
 # Questions
-
-Is this appropriately scoped? Does it have too many features? Too few?
-=======
-# Frash-Cards_ReduxProject
-An application that can play with frash cards and also make new one by using Redux.
->>>>>>> main/main
