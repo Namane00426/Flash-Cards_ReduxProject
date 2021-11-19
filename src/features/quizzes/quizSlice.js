@@ -8,9 +8,9 @@ const quizSlice = createSlice({
   },
   reducers: {
     addQuiz: (state, action) => {
-      const { id, name, topicId, cardIds } = action.payload;
-      state.quizzes[id] = {
-        id: id,
+      const { quizId, name, topicId, cardIds } = action.payload;
+      state.quizzes[quizId] = {
+        quizId: quizId,
         name: name,
         topicId: topicId,
         cardIds: cardIds
@@ -21,14 +21,15 @@ const quizSlice = createSlice({
 })
 
 export const addQuizForTopicId = (payload) => {
-    const {id, name, topicId,cardIds} = payload;
+    const {quizId, name, topicId,cardIds} = payload;
     
     return (dispatch) => {
-    dispatch(addQuiz({id, name, topicId, cardIds}));
-    dispatch(addQuizIds({topicId, id}));
+    dispatch(addQuiz({quizId, name, topicId, cardIds}));
+    dispatch(addQuizIds({topicId, quizId}));
   }
 }
 
 export const { addQuiz } = quizSlice.actions;
-export const selectQuizzes = (state) => state.quizzes.quizzes;
+
+export const selectQuizzes = state => state.quizzes.quizzes;
 export default quizSlice.reducer 
