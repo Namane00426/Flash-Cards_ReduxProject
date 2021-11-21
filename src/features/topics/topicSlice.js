@@ -22,8 +22,12 @@ const topicsSlice = createSlice({
               }
     },
     addQuizIds: (state, action) => {
-      const { topicId, quizId } = action.payload;
-      state.topics[topicId].quizIds.push(quizId);
+      const { topicId, id } = action.payload;
+      if(!topicId) {
+        alert('Select topic or add a topic first.');
+        return state;
+      }
+      state.topics[topicId].quizIds.push(id);
     }
   }
 })
@@ -32,4 +36,4 @@ export const {addTopic, addQuizIds} = topicsSlice.actions;
 
 export const selectTopics = state => state.topics.topics;
 export default topicsSlice.reducer
-// console.log(topicsSlice.actions);
+// console.log(topicsSlice);

@@ -21,6 +21,7 @@ export default function NewQuizForm() {
     }
 
     const cardIds = [];
+    // const generateId = uuidv4();
 
     // create the new cards here and add each card's id to cardIds
     // create the new quiz here
@@ -30,7 +31,7 @@ export default function NewQuizForm() {
       name: name, 
       topicId: topicId,
       cardIds: cardIds,
-      id: uuidv4(), 
+      quizId: uuidv4(), 
     }))
     history.push(ROUTES.quizzesRoute());
   };
