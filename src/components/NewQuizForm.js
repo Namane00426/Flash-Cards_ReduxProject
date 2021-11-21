@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ROUTES from "../app/routes";
-import { selectTopics } from "../features/topics/topicSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { addQuizForTopicId } from "../features/quizzes/quizSlice";
+
+import { selectTopics } from "../features/topics/topicSlice";
+import { addQuizForTopicId, selectQuizzes } from "../features/quizzes/quizSlice";
+import { addCard } from "../features/cards/cardSlice";
 
 export default function NewQuizForm() {
   const [name, setName] = useState("");
@@ -12,6 +14,7 @@ export default function NewQuizForm() {
   const [topicId, setTopicId] = useState("");
   const history = useHistory();
   const topics = useSelector(selectTopics);
+  const quizzes = useSelector(selectQuizzes);
   const dispatch = useDispatch();
   const id = uuidv4();
 
@@ -20,12 +23,19 @@ export default function NewQuizForm() {
     if (name.length === 0) {
       return;
     }
+    if(!cards) {
+      alert('no quiz card!');
+      return 
+    }
+    const front = cards[cards.length-1].front;
+    const back = cards[cards.length-1].back;
 
-    const cardIds = [];
-    ;
-
-    // create the new cards here and add each card's id to cardIds
-    // create the new quiz here
+    const cardIds = quizzes[`${id}`].cardIds;
+    ; 
+    
+    dispatch(addCard({ id, front, back}));
+    cardIds.push(`${id}`);
+    console.log(cardIds)
     
     dispatch(
       addQuizForTopicId({
