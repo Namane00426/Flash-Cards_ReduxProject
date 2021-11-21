@@ -13,6 +13,7 @@ export default function NewQuizForm() {
   const history = useHistory();
   const topics = useSelector(selectTopics);
   const dispatch = useDispatch();
+  const id = uuidv4();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,18 +22,15 @@ export default function NewQuizForm() {
     }
 
     const cardIds = [];
-    // const generateId = uuidv4();
+    ;
 
     // create the new cards here and add each card's id to cardIds
     // create the new quiz here
     
     dispatch(
       addQuizForTopicId({
-      name: name, 
-      topicId: topicId,
-      cardIds: cardIds,
-      quizId: uuidv4(), 
-    }))
+      name, id, topicId, cardIds
+    }));
     history.push(ROUTES.quizzesRoute());
   };
 

@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function Topics() {
   const topics = useSelector(selectTopics);
+  console.log(topics);
 
   return (
     <section className="center">

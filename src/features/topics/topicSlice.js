@@ -22,12 +22,12 @@ const topicsSlice = createSlice({
               }
     },
     addQuizIds: (state, action) => {
-      const { topicId, id } = action.payload;
+      const { topicId, quizId } = action.payload;
       if(!topicId) {
         alert('Select topic or add a topic first.');
         return state;
       }
-      state.topics[topicId].quizIds.push(id);
+      state.topics[topicId].quizIds.push(quizId);
     }
   }
 })

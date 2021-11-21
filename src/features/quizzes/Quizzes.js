@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export default function Quizzes() {
   const quizzes = useSelector(selectQuizzes); 
-  console.log(quizzes);
+  // console.log(quizzes);
 
   return (
     <section className="center">
