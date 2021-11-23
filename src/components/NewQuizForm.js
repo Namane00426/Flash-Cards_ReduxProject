@@ -5,8 +5,8 @@ import ROUTES from "../app/routes";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectTopics } from "../features/topics/topicSlice";
-import { addQuizForTopicId, selectQuizzes } from "../features/quizzes/quizSlice";
-import { addCard } from "../features/cards/cardSlice";
+import { addQuizForTopicId } from "../features/quizzes/quizSlice";
+import { addCard, selectCards } from "../features/cards/cardSlice";
 
 export default function NewQuizForm() {
   const [name, setName] = useState("");
@@ -14,7 +14,7 @@ export default function NewQuizForm() {
   const [topicId, setTopicId] = useState("");
   const history = useHistory();
   const topics = useSelector(selectTopics);
-  const quizzes = useSelector(selectQuizzes);
+  const allCards = useSelector(selectCards);
   const dispatch = useDispatch();
   const id = uuidv4();
 
@@ -23,19 +23,23 @@ export default function NewQuizForm() {
     if (name.length === 0) {
       return;
     }
-    if(!cards) {
-      alert('no quiz card!');
-      return 
-    }
-    const front = cards[cards.length-1].front;
-    const back = cards[cards.length-1].back;
+   
+    // console.log(cards);
+    for (let index in cards) {
+      const front = cards[index].front;
+      const back = cards[index].back;
 
-    const cardIds = quizzes[`${id}`].cardIds;
-    ; 
+      dispatch(addCard({id:uuidv4(), front: front, back: back}));
+    }
     
-    dispatch(addCard({ id, front, back}));
-    cardIds.push(`${id}`);
-    console.log(cardIds)
+    let cardIds = [];
+    for(let card in cards) {
+      for(let cardId in card){
+        cardIds.push(cardId);
+      }
+    }
+    console.log(cardIds);
+   
     
     dispatch(
       addQuizForTopicId({
@@ -58,6 +62,7 @@ export default function NewQuizForm() {
     const newCards = cards.slice();
     newCards[index][side] = value;
     setCards(newCards);
+    // -> 0:{front: ff, back: bb}
   };
 
   return (
@@ -91,6 +96,7 @@ export default function NewQuizForm() {
                 updateCardState(index, "front", e.currentTarget.value)
               }
               placeholder="Front"
+              required
             />
 
             <input
@@ -100,6 +106,7 @@ export default function NewQuizForm() {
                 updateCardState(index, "back", e.currentTarget.value)
               }
               placeholder="Back"
+              required
             />
 
             <button
