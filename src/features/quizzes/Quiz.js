@@ -4,11 +4,10 @@ import ROUTES from "../../app/routes";
 import { useSelector } from "react-redux";
 import { selectQuizzes } from "./quizSlice";
 
-export default function Topic() {
+export default function Quiz() {
   const quizzes = useSelector(selectQuizzes); 
   let { quizId } = useParams();
   const quiz = quizzes[quizId];
-  // console.log(quizzes)
 
   return (
     <section>
