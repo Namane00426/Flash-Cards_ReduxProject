@@ -1,6 +1,6 @@
-# Frash-Cards_ReduxProject
+# Flash-Cards_ReduxProject
 
-An application that can play with frash cards and also make new one by using Redux.
+An application that can play with flash cards and also make new one by using Redux.
 
 # To Run
 
