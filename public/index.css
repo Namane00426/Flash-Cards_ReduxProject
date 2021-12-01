@@ -73,6 +73,7 @@ button,
 
 section {
   padding: 20px 16px;
+  max-width: 500px;
 }
 
 input,
