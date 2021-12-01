@@ -64,12 +64,6 @@ button,
   text-decoration: none;
 }
 
-button,
-.button :hover {
-  background-color: crimson;
-  color: white;
-}
-
 .create-new-topic-button {
   margin: 0 auto;
   display: block;
