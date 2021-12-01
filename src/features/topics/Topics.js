@@ -15,7 +15,7 @@ export default function Topics() {
       <h1>Topics</h1>
       <ul className="topics-list center">
         {Object.values(topics).map((topic) => (
-          <li className="topic" key={topic.id}>
+          <li className="topic center" key={topic.id}>
           <Link to={ROUTES.topicRoute(topic.id)} className="topic-link">
            <div className="topic-container">
              <img src={topic.icon} alt="" />
