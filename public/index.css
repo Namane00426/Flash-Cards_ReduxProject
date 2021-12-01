@@ -95,6 +95,7 @@ input::placeholder {
 .form-section {
   padding-top: 20px;
   padding-bottom: 30px;
+  max-width: 500px;
 }
 
 .center {
