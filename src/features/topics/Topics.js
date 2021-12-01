@@ -7,8 +7,12 @@ import { useSelector } from "react-redux";
  
 
 export default function Topics() {
+
   const topics = useSelector(selectTopics);
-  console.log(topics);
+  if(!topics) {
+    alert('Please add topics first')
+    return;
+  }
 
   return (
     <section className="center">
