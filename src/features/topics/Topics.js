@@ -1,5 +1,5 @@
 import React from "react";
-import NewTopicForm from "../../components/NewTopicForm";
+// import NewTopicForm from "../../components/NewTopicForm";
 import { Link } from "react-router-dom";
 import ROUTES from "../../app/routes";
 import { selectTopics } from "./topicSlice";
