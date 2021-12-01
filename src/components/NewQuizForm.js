@@ -64,7 +64,7 @@ export default function NewQuizForm() {
   return (
     <section>
       <h1>Create a new quiz</h1>
-      <div className="center">
+      <div className="quiz-form center">
       <form  onSubmit={handleSubmit}>
         <input
           id="quiz-name"
