@@ -139,6 +139,7 @@ option {
 .topics-list {
   list-style: none;
   padding: 0;
+  max-width: 500px;
 }
 
 .topic {
@@ -146,6 +147,7 @@ option {
   border: 1px solid #bcbcbc;
   border-radius: 3px;
   padding: 26px 20px;
+  max-width: 500px;
 }
 
 .topic-container {
