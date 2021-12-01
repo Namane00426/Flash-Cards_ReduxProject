@@ -85,7 +85,7 @@ export default function NewQuizForm() {
           ))}
         </select>
         {cards.map((card, index) => (
-          <div key={index} className="card-front-back">
+          <div key={index} className="card-front-back center">
             <input
               id={`card-front-${index}`}
               value={cards[index].front}
