@@ -117,6 +117,7 @@ section > h1 {
 
 .card-front-back {
   padding-top: 25px;
+  max-width: 500px;
 }
 
 .remove-card-button {
