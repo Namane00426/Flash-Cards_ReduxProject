@@ -64,6 +64,12 @@ button,
   text-decoration: none;
 }
 
+button,
+.button :hover {
+  background-color: crimson;
+  color: white;
+}
+
 .create-new-topic-button {
   margin: 0 auto;
   display: block;
@@ -112,7 +118,6 @@ section > h1 {
   padding-top: 16px;
   display: flex;
   justify-content: space-between;
-  max-width: 500px;
 }
 
 .card-front-back {
@@ -130,6 +135,7 @@ section > h1 {
   border: none;
   padding: unset;
   margin-top: -8px;
+  margin-right: 10%;
 }
 
 option {
