@@ -108,7 +108,7 @@ export default function NewQuizForm() {
 
             <button
               onClick={(e) => removeCard(e, index)}
-              className="remove-card-button"
+              className="remove-card-button center"
             >
               Remove Card
             </button>
