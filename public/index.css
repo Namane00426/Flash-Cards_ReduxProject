@@ -112,6 +112,7 @@ section > h1 {
   padding-top: 16px;
   display: flex;
   justify-content: space-between;
+  max-width: 500px;
 }
 
 .card-front-back {
